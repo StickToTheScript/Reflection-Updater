@@ -23,6 +23,7 @@ public class Finder {
     public static final int COMPARISON2 = -9;
     public static final int ARITHMETIC = -10;
     public static final int MULTIPLY = -11;
+    public static final int INVOCATION = -12;
     private InsnList instructions = null;
 
     public Finder(MethodNode method) {
@@ -228,6 +229,7 @@ public class Finder {
             case COMPARISON2: return (opcode >= Opcodes.IFEQ && opcode <= Opcodes.IFLE);
             case ARITHMETIC: return (opcode >= Opcodes.IADD && opcode <= Opcodes.DDIV);
             case MULTIPLY: return (opcode >= Opcodes.IMUL && opcode <= Opcodes.DMUL);
+            case INVOCATION: return (opcode >= Opcodes.INVOKEVIRTUAL && opcode <= Opcodes.INVOKEDYNAMIC);
 
             case WILDCARD: return true;
             case OPTIONAL: return true;
