@@ -26,7 +26,7 @@ public class Main {
     static ClassAnalyser analyser = null;
 
     public static void main(String[] args) {
-        String url = "http://world.game.com";
+        String url = System.getEnv("GAME_WORLD_URL");
         analyser = new ClassAnalyser(url, String.format("%d.jar", getLatestRevision(url,202)), true);
 //        analyser = new ClassAnalyser(url, String.format("%d.jar", 202), true);
         //analyser = new ClassAnalyser(url, String.format("%s.jar", "Android"), true);
